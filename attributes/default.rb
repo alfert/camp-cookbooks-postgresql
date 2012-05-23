@@ -17,6 +17,12 @@
 # limitations under the License.
 #
 
+default[:postgresql][:port] = 5432
+default[:postgresql][:max_connections] = 100
+default[:postgresql][:wal_level] = 'minimal' # minimal, archive, or hot_standby
+default[:postgresql][:max_wal_senders] = "0"
+default[:postgresql][:hot_standby] = "off"
+
 case platform
 when "debian"
 
